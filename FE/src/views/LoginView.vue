@@ -21,7 +21,7 @@
 <script setup>
 const loginWithGoogle = () => {
   window.location.href =
-    "http://localhost:80/accounts/google/login/"
+    "http://127.0.0.1:80/accounts/google/login/"
 }
 </script>
 
