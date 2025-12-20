@@ -44,7 +44,6 @@ class User(AbstractBaseUser, PermissionsMixin):
         return self.email
 
 
-
 class SocialAccount(models.Model):
     PROVIDER_CHOICES = (
         ("google", "Google"),
@@ -53,11 +52,7 @@ class SocialAccount(models.Model):
         ("apple", "Apple"),
     )
 
-    user = models.ForeignKey(
-        User,
-        on_delete=models.CASCADE,
-        related_name="social_accounts"
-    )
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="social_accounts")
 
     provider = models.CharField(max_length=20, choices=PROVIDER_CHOICES)
     provider_user_id = models.CharField(max_length=255)
